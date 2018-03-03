@@ -1,7 +1,7 @@
 local ButtonDialog = require("ui/widget/buttondialog")
 local ButtonDialogTitle = require("ui/widget/buttondialogtitle")
-local Cache = require("cache")
-local CacheItem = require("cacheitem")
+--local Cache = require("cache")
+--local CacheItem = require("cacheitem")
 local ConfirmBox = require("ui/widget/confirmbox")
 local InfoMessage = require("ui/widget/infomessage")
 local LoginDialog = require("ui/widget/logindialog")
@@ -23,17 +23,17 @@ local url = require('socket.url')
 local util = require("util")
 local T = require("ffi/util").template
 
-local CatalogCacheItem = CacheItem:new{
-    size = 1024,  -- fixed size for catalog item
-}
-
+--local CatalogCacheItem = CacheItem:new{
+--    size = 1024,  -- fixed size for catalog item
+--}
+--
 -- cache catalog parsed from feed xml
-local CatalogCache = Cache:new{
-    max_memsize = 20*1024, -- keep only 20 cache items
-    current_memsize = 0,
-    cache = {},
-    cache_order = {},
-}
+--local CatalogCache = Cache:new{
+--    max_memsize = 20*1024, -- keep only 20 cache items
+--    current_memsize = 0,
+--    cache = {},
+--    cache_order = {},
+--}
 
 local OPDSBrowser = Menu:extend{
     opds_servers = {},
@@ -50,6 +50,7 @@ local OPDSBrowser = Menu:extend{
         ["application/fb2+zip"] = "FB2",
         ["application/pdf"] = "PDF",
         ["text/plain"] = "TXT",
+        ["text/html"] = "HTML",
         ["application/x-mobipocket-ebook"] = "MOBI",
         ["application/x-mobi8-ebook"] = "AZW3",
     },
@@ -338,16 +339,16 @@ end
 function OPDSBrowser:parseFeed(feed_url)
     local feed
     local hash = "opds|catalog|" .. feed_url
-    local cache = CatalogCache:check(hash)
-    if cache then
-        feed = cache.feed
-    else
-        logger.dbg("cache", hash)
+    --local cache = CatalogCache:check(hash)
+    --if cache then
+    --    feed = cache.feed
+    --else
+    --    logger.dbg("cache", hash)
         feed = self:fetchFeed(feed_url)
-        if feed then
-            CatalogCache:insert(hash, CatalogCacheItem:new{ feed = feed })
-        end
-    end
+        --if feed then
+        --    CatalogCache:insert(hash, CatalogCacheItem:new{ feed = feed })
+        --end
+    --end
     if feed then
         return OPDSParser:parse(feed)
     end
@@ -535,17 +536,17 @@ function OPDSBrowser:downloadFile(item, format, remote_url)
         })
     end
 
-    if lfs.attributes(local_path, "mode") == "file" then
-        UIManager:show(ConfirmBox:new {
-            text = T(gettext("The file %1 already exists. Do you want to overwrite it?"), local_path),
-            ok_text = gettext("Overwrite"),
-            ok_callback = function()
-                download()
-            end,
-        })
-    else
+    --if lfs.attributes(local_path, "mode") == "file" then
+    --    UIManager:show(ConfirmBox:new {
+    --        text = T(gettext("The file %1 already exists. Do you want to overwrite it?"), local_path),
+    --        ok_text = gettext("Overwrite"),
+    --        ok_callback = function()
+    --            download()
+    --        end,
+    --    })
+    --else
         download()
-    end
+    --end
 end
 
 function OPDSBrowser:createNewDownloadDialog(path, buttons)
