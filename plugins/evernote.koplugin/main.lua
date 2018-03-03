@@ -1,3 +1,7 @@
+if true then
+    return { disabled = true, }
+end
+
 local InputContainer = require("ui/widget/container/inputcontainer")
 local LoginDialog = require("ui/widget/logindialog")
 local InfoMessage = require("ui/widget/infomessage")

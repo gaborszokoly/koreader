@@ -1,3 +1,7 @@
+if true then
+    return { disabled = true, }
+end
+
 local InputContainer = require("ui/widget/container/inputcontainer")
 local InputDialog = require("ui/widget/inputdialog")
 local DoubleKeyValuePage = require("doublekeyvaluepage")
