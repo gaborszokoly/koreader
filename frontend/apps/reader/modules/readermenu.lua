@@ -178,6 +178,14 @@ function ReaderMenu:setUpdateItemTable()
         end,
     }
 
+    self.menu_items.opds_catalog = {
+        text = _("OPDS catalog"),
+        callback = function()
+            local OPDSCatalog = require("apps/opdscatalog/opdscatalog")
+            OPDSCatalog:showCatalog()
+        end,
+    }
+
     local order = require("ui/elements/reader_menu_order")
 
     local MenuSorter = require("ui/menusorter")

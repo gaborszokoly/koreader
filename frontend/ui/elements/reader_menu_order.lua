@@ -83,6 +83,8 @@ local order = {
         --"goodreads",
         --"----------------------------",
         "fulltext_search",
+        "----------------------------",
+        "opds_catalog",
     },
     filemanager = {},
     main = {
