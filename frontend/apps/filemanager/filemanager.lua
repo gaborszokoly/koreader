@@ -226,16 +226,16 @@ function FileManager:init()
                 {
                     text = _("Delete"),
                     callback = function()
-                        UIManager:show(ConfirmBox:new{
-                            text = _("Are you sure that you want to delete this file?\n") .. file .. ("\n") .. _("If you delete a file, it is permanently lost."),
-                            ok_text = _("Delete"),
-                            ok_callback = function()
+                        --UIManager:show(ConfirmBox:new{
+                        --    text = _("Are you sure that you want to delete this file?\n") .. file .. ("\n") .. _("If you delete a file, it is permanently lost."),
+                        --    ok_text = _("Delete"),
+                        --    ok_callback = function()
                                 deleteFile(file)
                                 filemanagerutil.removeFileFromHistoryIfWanted(file)
                                 self:refreshPath()
                                 UIManager:close(self.file_dialog)
-                            end,
-                        })
+                        --    end,
+                        --})
                     end,
                 },
                 {
