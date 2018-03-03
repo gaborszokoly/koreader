@@ -1,3 +1,7 @@
+if true then
+    return { disabled = true, }
+end
+
 local Device = require("device")
 
 if not Device:isKindle() or

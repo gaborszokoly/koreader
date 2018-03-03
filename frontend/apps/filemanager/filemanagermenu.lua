@@ -195,13 +195,13 @@ function FileManagerMenu:setUpdateItemTable()
     }
 
     -- search tab
-    self.menu_items.find_book_in_calibre_catalog = {
-        text = _("Find a book in calibre catalog"),
-        callback = function()
-            Search:getCalibre()
-            Search:ShowSearch()
-        end
-    }
+    --self.menu_items.find_book_in_calibre_catalog = {
+    --    text = _("Find a book in calibre catalog"),
+    --    callback = function()
+    --        Search:getCalibre()
+    --        Search:ShowSearch()
+    --    end
+    --}
     self.menu_items.find_file = {
         text = _("Find a file"),
         callback = function()

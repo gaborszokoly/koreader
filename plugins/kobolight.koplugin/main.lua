@@ -1,3 +1,7 @@
+if true then
+    return { disabled = true, }
+end
+
 local Device = require("device")
 
 local with_frontlight = (Device:isKindle() or Device:isKobo()) and Device:hasFrontlight()

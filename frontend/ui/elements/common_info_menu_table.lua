@@ -43,16 +43,16 @@ common_info.about = {
         })
     end
 }
-common_info.report_bug = {
-    text = _("Report a bug"),
-    callback = function()
-        local model = Device.model
-        UIManager:show(InfoMessage:new{
-            text = T(_("Please report bugs to \nhttps://github.com/koreader/koreader/issues\n\nVersion:\n%1\n\nDetected device:\n%2"),
-                version, model),
-        })
-    end
-}
+--common_info.report_bug = {
+--    text = _("Report a bug"),
+--    callback = function()
+--        local model = Device.model
+--        UIManager:show(InfoMessage:new{
+--            text = T(_("Please report bugs to \nhttps://github.com/koreader/koreader/issues\n\nVersion:\n%1\n\nDetected device:\n%2"),
+--                version, model),
+--        })
+--    end
+--}
 
 if Device:isKindle() or Device:isKobo() then
     common_info.sleep = {

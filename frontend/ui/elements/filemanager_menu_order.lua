@@ -30,8 +30,8 @@ local order = {
         -- end common settings
     },
     tools = {
-        "calibre_wireless_connection",
-        "evernote",
+        --"calibre_wireless_connection",
+        --"evernote",
         "statistics",
         "storage_stat",
         "cloud_storage",
@@ -45,8 +45,8 @@ local order = {
         "developer_options",
     },
     more_plugins = {
-        "auto_frontlight",
-        "frontlight_gesture_controller",
+        --"auto_frontlight",
+        --"frontlight_gesture_controller",
         "battery_statistics",
         "synchronize_time",
         "keep_alive",
@@ -62,10 +62,10 @@ local order = {
         "wikipedia_history",
         "wikipedia_settings",
         "----------------------------",
-        "find_book_in_calibre_catalog",
+        --"find_book_in_calibre_catalog",
         "find_file",
         "----------------------------",
-        "goodreads",
+        --"goodreads",
         "opds_catalog",
     },
     main = {
@@ -84,8 +84,8 @@ local order = {
     help = {
         "quickstart_guide",
         "----------------------------",
-        "report_bug",
-        "----------------------------",
+        --"report_bug",
+        --"----------------------------",
         "about",
     },
     exit_menu = {

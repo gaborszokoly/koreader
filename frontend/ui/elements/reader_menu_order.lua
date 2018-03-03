@@ -33,7 +33,7 @@ local order = {
         "speed_reading_module_perception_expander",
     },
     setting = {
-        "read_from_right_to_left",
+        --"read_from_right_to_left",
         -- common settings
         -- those that don't exist will simply be skipped during menu gen
         "frontlight", -- if Device:hasFrontlight()
@@ -52,8 +52,8 @@ local order = {
     },
     tools = {
         "read_timer",
-        "calibre_wireless_connection",
-        "evernote",
+        --"calibre_wireless_connection",
+        --"evernote",
         "statistics",
         "progress_sync",
         "zsync",
@@ -64,7 +64,7 @@ local order = {
     },
     more_plugins = {
         "auto_frontlight",
-        "frontlight_gesture_controller",
+        --"frontlight_gesture_controller",
         "battery_statistics",
         "synchronize_time",
         "keep_alive",
@@ -80,8 +80,8 @@ local order = {
         "wikipedia_history",
         "wikipedia_settings",
         "----------------------------",
-        "goodreads",
-        "----------------------------",
+        --"goodreads",
+        --"----------------------------",
         "fulltext_search",
     },
     filemanager = {},
@@ -102,8 +102,8 @@ local order = {
     help = {
         "quickstart_guide",
         "----------------------------",
-        "report_bug",
-        "----------------------------",
+        --"report_bug",
+        --"----------------------------",
         "about",
     },
     exit_menu = {

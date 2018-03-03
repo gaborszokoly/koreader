@@ -209,14 +209,14 @@ function ReaderPaging:addToMainMenu(menu_items)
         end,
         sub_item_table = page_overlap_menu,
     }
-    menu_items.read_from_right_to_left = {
-        text = _("Read from right to left"),
-        checked_func = function() return self.inverse_reading_order end,
-        callback = function()
-            self.inverse_reading_order = not self.inverse_reading_order
-            self:setupTapTouchZones()
-        end,
-    }
+    --menu_items.read_from_right_to_left = {
+    --    text = _("Read from right to left"),
+    --    checked_func = function() return self.inverse_reading_order end,
+    --    callback = function()
+    --        self.inverse_reading_order = not self.inverse_reading_order
+    --        self:setupTapTouchZones()
+    --    end,
+    --}
 end
 
 function ReaderPaging:onColorRenderingUpdate()
